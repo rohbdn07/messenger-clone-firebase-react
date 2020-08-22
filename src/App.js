@@ -4,6 +4,7 @@ import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
 import Message from "./Message";
 import db from "./firebase";
 import firebase from "firebase";
+import FlipMove from "react-flip-move";
 
 function App() {
   const [input, setInput] = useState("");
@@ -30,7 +31,9 @@ function App() {
     db.collection("messages")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()));
+        setMessages(
+          snapshot.docs.map((doc) => ({ id: doc.id, message: doc.data() }))
+        );
       });
   }, []);
 
@@ -67,15 +70,20 @@ function App() {
             disabled={!input}
             variant='contained'
             color='primary'
-            /* onClick={sendMessage} */
+            onClick={sendMessage}
           >
             Send Message
           </Button>
         </FormControl>
       </form>
-      {messages.map((message) => (
-        <Message username={username} message={message} />
-      ))}
+
+      {/* ****************code for mapping each messages and render the Message.js component with props************** */}
+      {/* ********************uses FlipMove feature to make beautiful movement while sending messages*********** */}
+      <FlipMove>
+        {messages.map(({ id, message }) => (
+          <Message key={id} username={username} message={message} />
+        ))}
+      </FlipMove>
     </div>
   );
 }
