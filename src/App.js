@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
 import Message from "./Message";
+import db from "./firebase";
+import firebase from "firebase";
 
 function App() {
   const [input, setInput] = useState("");
@@ -9,11 +11,11 @@ function App() {
   const [messages, setMessages] = useState([
     {
       username: "Rohit",
-      text: "hei guys",
+      message: "hei guys",
     },
     {
       username: "Mohit",
-      text: " hello dear",
+      message: " hello dear",
     },
   ]);
 
@@ -21,6 +23,14 @@ function App() {
   //usestate = variable in REACT
 
   //UseEffect =run code on a condition in REACT
+
+  useEffect(() => {
+    //run once when the app component loads
+    //MOST IMPORTANT CODE IN ORDER TO STORE(listen) THE VALUES(MESSAGES) TO FIREBASE DATABASE...
+    db.collection("messages").onSnapshot((snapshot) => {
+      setMessages(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
 
   useEffect(() => {
     //run code here..
@@ -31,7 +41,12 @@ function App() {
   const sendMessage = (event) => {
     //all the logic to send a message goes here..
     event.preventDefault();
-    setMessages([...messages, { username: username, text: input }]);
+    db.collection("messages").add({
+      message: input,
+      username: username,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
     setInput("");
   };
 
