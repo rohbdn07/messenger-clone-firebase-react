@@ -37,9 +37,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1> Messanger App: ) </h1>
+      <h1>Messenger app</h1>
       <h2>Welcome {username}</h2>
-      <form>
+      <form onSubmit={sendMessage}>
         <FormControl>
           <InputLabel> Enter a message... </InputLabel>
           <Input
@@ -50,14 +50,14 @@ function App() {
             disabled={!input}
             variant='contained'
             color='primary'
-            onClick={sendMessage}
+            /* onClick={sendMessage} */
           >
             Send Message
           </Button>
         </FormControl>
       </form>
       {messages.map((message) => (
-        <Message username={username} text={message} />
+        <Message username={username} message={message} />
       ))}
     </div>
   );

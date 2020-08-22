@@ -3,16 +3,20 @@
     margin: 10px;
     width: fit-content;
     /* background-color: rgba(33, 33, 207, 0.911) !important; */
-    color: rgb(201, 63, 63) !important;
-    border-radius: 10px !important;
-    box-shadow: rgb(0, 0, 0) 2px 2px 5px 1px !important;
+
+}
+
+.message__user {
     margin-left: auto;
+    color: white;
+    text-align: left !important;
 }
 
-.message_usercard {
-    background-color: blue !important;
+.message__usercard {
+    background-color: rgba(14, 14, 219, 0.925) !important;
+    color: white !important;
 }
 
-.message_guestCard {
-    background-color: grey !important;
+.message__guestCard {
+    background-color: rgba(66, 54, 54, 0.418) !important;
 }
