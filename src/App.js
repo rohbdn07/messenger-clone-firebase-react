@@ -26,10 +26,12 @@ function App() {
 
   useEffect(() => {
     //run once when the app component loads
-    //MOST IMPORTANT CODE IN ORDER TO STORE(listen) THE VALUES(MESSAGES) TO FIREBASE DATABASE...
-    db.collection("messages").onSnapshot((snapshot) => {
-      setMessages(snapshot.docs.map((doc) => doc.data()));
-    });
+    //MOST IMPORTANT CODE IN ORDER TO STORE(listen) THE VALUES(MESSAGES) INTO FIREBASE DATABASE...
+    db.collection("messages")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setMessages(snapshot.docs.map((doc) => doc.data()));
+      });
   }, []);
 
   useEffect(() => {
