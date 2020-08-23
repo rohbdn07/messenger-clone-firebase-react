@@ -5,6 +5,7 @@ import Message from "./Message";
 import db from "./firebase";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
+import logo from "./messanger-logo.png";
 
 function App() {
   const [input, setInput] = useState("");
@@ -57,9 +58,13 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Messenger app</h1>
-      <h2>Welcome {username}</h2>
-      <form onSubmit={sendMessage}>
+      <div className='top__header'>
+        <img className='logo' src={logo} />
+        <h1>Messenger </h1>
+        <h2>Welcome {username}</h2>
+      </div>
+
+      <form onSubmit={sendMessage} className='app__form'>
         <FormControl>
           <InputLabel> Enter a message... </InputLabel>
           <Input
