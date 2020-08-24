@@ -21,14 +21,15 @@
   flex-direction: row;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
+.app__formControl {
+  display: flex !important;
+  flex-direction: row !important;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-around;
+.app__Input {
+  flex: 1;
+}
+
+.app__iconButton {
+  flex: 0;
 }

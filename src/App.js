@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
+import SendIcon from "@material-ui/icons/Send";
+import { IconButton } from "@material-ui/core";
 import Message from "./Message";
 import db from "./firebase";
 import firebase from "firebase";
@@ -64,21 +66,23 @@ function App() {
         <h1>Messenger </h1>
         <h2>Welcome {username}</h2>
       </div>
-      <form onSubmit={sendMessage} className='app__form center'>
-        <FormControl>
-          <InputLabel> Enter a message... </InputLabel>
+      <form onSubmit={sendMessage} className='app__form'>
+        <FormControl className='app__formControl'>
           <Input
+            className='app__Input'
+            placeholder='Enter a message...'
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
-          <Button
+          <IconButton
+            className='app__iconButton'
             disabled={!input}
             variant='contained'
             color='primary'
             onClick={sendMessage}
           >
-            Send Message
-          </Button>
+            <SendIcon />
+          </IconButton>
         </FormControl>
       </form>
       {/* ****************code for mapping each messages and render the Message.js component with props************** */}
