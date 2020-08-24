@@ -14,9 +14,21 @@
   bottom: 2px;
   width: 100%;
   height: 70px;
-  background-color: rgba(151, 224, 17, 0.904);
+  background-color: #e9e9eb;
   margin: 10px;
   z-index: 1;
   display: flex;
   flex-direction: row;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
 }

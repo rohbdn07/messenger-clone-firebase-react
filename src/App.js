@@ -6,6 +6,7 @@ import db from "./firebase";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
 import logo from "./messanger-logo.png";
+import "./Message.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -63,8 +64,7 @@ function App() {
         <h1>Messenger </h1>
         <h2>Welcome {username}</h2>
       </div>
-
-      <form onSubmit={sendMessage} className='app__form'>
+      <form onSubmit={sendMessage} className='app__form center'>
         <FormControl>
           <InputLabel> Enter a message... </InputLabel>
           <Input
@@ -81,7 +81,6 @@ function App() {
           </Button>
         </FormControl>
       </form>
-
       {/* ****************code for mapping each messages and render the Message.js component with props************** */}
       {/* ********************uses FlipMove feature to make beautiful movement while sending messages*********** */}
       <FlipMove>

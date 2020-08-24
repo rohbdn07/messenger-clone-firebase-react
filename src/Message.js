@@ -11,7 +11,7 @@ const Message = forwardRef(({ message, username }, ref) => {
         {/* //use of BEM (for e.g: double underscope in message__usercard)*/}
         <CardContent>
           <Typography color='white' variant='h5' component='h2'>
-            {message.username} : {message.message}
+            {!isUser && `${message.username} :`} {message.message}
           </Typography>
         </CardContent>
       </Card>
