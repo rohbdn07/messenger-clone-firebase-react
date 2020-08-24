@@ -64,12 +64,12 @@ function App() {
       <div className='top__header'>
         <img className='logo' src={logo} />
         <h1>Messenger </h1>
-        <h2>Welcome {username}</h2>
+        <h1>Welcome {username}</h1>
       </div>
       <form onSubmit={sendMessage} className='app__form'>
         <FormControl className='app__formControl'>
           <Input
-            className='app__Input'
+            className='app__input'
             placeholder='Enter a message...'
             value={input}
             onChange={(event) => setInput(event.target.value)}

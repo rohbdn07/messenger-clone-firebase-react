@@ -7,7 +7,10 @@
   width: 100px;
   height: 100px;
 }
-
+.top__header {
+  font-family: "Allura", cursive;
+  font-size: large;
+}
 .app__form {
   padding: 20px;
   position: fixed;
@@ -26,10 +29,10 @@
   flex-direction: row !important;
 }
 
-.app__Input {
+.app__input {
   flex: 1;
 }
 
 .app__iconButton {
-  flex: 0;
+  flex: 0 !important;
 }

@@ -1,23 +1,24 @@
 .message {
-  padding: 10px;
-  margin: 10px;
-  width: fit-content;
-  /* background-color: rgba(33, 33, 207, 0.911) !important; */
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
+    /* background-color: rgba(33, 33, 207, 0.911) !important; */
+    font-family: "Allura", cursive;
 }
 
 .message__user {
-  margin-left: auto;
-  color: white;
-  text-align: left !important;
+    margin-left: auto;
+    color: white;
+    text-align: left !important;
 }
 
 .message__usercard {
-  background-color: rgba(14, 14, 219, 0.925) !important;
-  color: white !important;
-  border-radius: 15px !important;
+    background-color: rgba(27, 27, 185, 0.747) !important;
+    color: white !important;
+    border-radius: 15px !important;
 }
 
 .message__guestCard {
-  background-color: rgba(66, 54, 54, 0.418) !important;
-  border-radius: 15px !important;
+    background-color: rgba(66, 54, 54, 0.418) !important;
+    border-radius: 15px !important;
 }
