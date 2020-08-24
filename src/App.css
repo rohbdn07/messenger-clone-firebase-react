@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
 .App {
   text-align: center;
 }
@@ -7,10 +9,13 @@
   width: 100px;
   height: 100px;
 }
+
 .top__header {
-  font-family: "Allura", cursive;
+  font-family: "Allura", cursive !important;
   font-size: large;
+
 }
+
 .app__form {
   padding: 20px;
   position: fixed;
